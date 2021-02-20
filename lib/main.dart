@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:mirk/widgets/chat/chat.dart';
+import 'package:mirk/widgets/dialogs/user_list.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Mirk());
 }
 
-class MyApp extends StatelessWidget {
+class Mirk extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mirk',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Mirk'),
@@ -28,22 +29,29 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool _isDesktopView = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black ,
-       title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-
-          ],
+        backgroundColor: Color(0xFF250028),
+        appBar: AppBar(
+          backgroundColor: Color(0xFF18001A),
+          title: Text(
+            widget.title,
+            style: TextStyle(fontWeight: FontWeight.w300),
+          ),
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        body: (_isDesktopView)
+            ? Row(children: [
+                Flexible(flex: 2,
+                  child: UserList(),
+                ),
+                Flexible(
+                  flex: 7,
+                  child: UserChat(),
+                )
+              ])
+            : Center(child: CircularProgressIndicator()));
   }
 }
