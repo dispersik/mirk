@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "462892663398",
+    "project_id": "mirk-d4f69",
+    "storage_bucket": "mirk-d4f69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462892663398:android:19f4cd549cae098ec8a3a7",
+        "android_client_info": {
+          "package_name": "com.dispersik.mirk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462892663398-0mfrlfuv88vpdun7ib7j3mc6gd19vd3b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfu_6hkKYi6QR6CJl_nsXMoCXuvMfkZmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462892663398-0mfrlfuv88vpdun7ib7j3mc6gd19vd3b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

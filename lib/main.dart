@@ -1,8 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:mirk/widgets/chat/chat.dart';
 import 'package:mirk/widgets/dialogs/user_list.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
   runApp(Mirk());
 }
 

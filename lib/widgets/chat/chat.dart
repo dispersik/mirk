@@ -9,34 +9,36 @@ import 'package:mirk/widgets/chat/sended_message.dart';
 class UserChat extends StatelessWidget {
   final _messageController = TextEditingController();
 
+  final _user = User(id: 0, nickname: 'admin');
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Expanded(
             child: ListView(
-          children: [
-            Expanded(child: Text('')),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: SendedMessage(message: _debugMessage),
+                Expanded(child: Text('')),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: SendedMessage(message: _debugMessage),
+                    ),
+                  ],
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: ArrivedMessage(message: _debugMessage),
+                    ),
+                  ],
+                )
               ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: ArrivedMessage(message: _debugMessage),
-                ),
-              ],
-            )
-          ],
-        )),
+            )),
         Container(
           height: 50,
           child: Row(
@@ -50,7 +52,7 @@ class UserChat extends StatelessWidget {
                   style: TextStyle(
                       color: Colors.grey, fontWeight: FontWeight.w300),
                   decoration: InputDecoration(
-                    filled: true,
+                      filled: true,
                       fillColor: Color(0xFF1C071E),
                       disabledBorder: InputBorder.none,
                       focusedBorder: InputBorder.none,

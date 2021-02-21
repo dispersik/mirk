@@ -6,7 +6,6 @@ class ArrivedMessage extends StatelessWidget {
   ArrivedMessage({@required this.message});
 
   final Message message;
-
   @override
   Widget build(BuildContext context) {
     return Container(
