@@ -4,6 +4,7 @@ import 'package:flutter/painting.dart';
 import 'package:mirk/back/message.dart';
 import 'package:mirk/back/user.dart';
 import 'package:mirk/widgets/chat/arrived_message.dart';
+import 'package:mirk/widgets/chat/message_builder.dart';
 import 'package:mirk/widgets/chat/sended_message.dart';
 
 class UserChat extends StatelessWidget {
@@ -14,29 +15,13 @@ class UserChat extends StatelessWidget {
     return Column(
       children: [
         Expanded(
-            child: ListView(
-          children: [
-            Expanded(child: Text('')),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: SendedMessage(message: _debugMessage),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: ArrivedMessage(message: _debugMessage),
-                ),
-              ],
-            )
-          ],
-        )),
+          child: ListView.builder(
+            reverse: true,
+            itemCount: messages.length,
+            itemBuilder: (context, index) =>
+                buildMessage(messages[index], User(id: 1377, nickname: '^^3')),
+          ),
+        ),
         Container(
           height: 50,
           child: Row(
@@ -46,11 +31,12 @@ class UserChat extends StatelessWidget {
               ),
               Expanded(
                 child: TextField(
+                  onSubmitted: (text) => print(text),
                   controller: _messageController,
                   style: TextStyle(
                       color: Colors.grey, fontWeight: FontWeight.w300),
                   decoration: InputDecoration(
-                    filled: true,
+                      filled: true,
                       fillColor: Color(0xFF1C071E),
                       disabledBorder: InputBorder.none,
                       focusedBorder: InputBorder.none,
@@ -79,7 +65,7 @@ class UserChat extends StatelessWidget {
 
 Message _debugMessage = Message(
     text:
-        '''Агапэ — любовь всепрощающая, терпеливая и постоянная. Психологи полагают, что такие отношения, безвозмездные и построенные на глубоком доверии, проходят проверку временем.
+    '''Агапэ — любовь всепрощающая, терпеливая и постоянная. Психологи полагают, что такие отношения, безвозмездные и построенные на глубоком доверии, проходят проверку временем.
 
 Прообразом сторгэ стала любовь Пенелопы к Одиссею, которая, вопреки всему, дождалась своего мужа. Этому чувству присуща родительская забота, оно прочно и только усиливается со временем.
 
@@ -93,3 +79,7 @@ Message _debugMessage = Message(
     source: User(id: 0, nickname: 'm8'),
     destination: User(id: 1377, nickname: '^^3'),
     dt: DateTime.now());
+
+Message _msg = Message(text: 'есть такое, да', dt: DateTime.now(), source: User(id: 1377, nickname: '^^3'), destination: User(id: 0, nickname: 'm8'));
+
+List<Message> messages = <Message>[_debugMessage, _msg];
