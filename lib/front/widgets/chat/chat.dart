@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:mirk/back/entities/message.dart';
 import 'package:mirk/back/entities/user.dart';
-import 'package:mirk/widgets/chat/arrived_message.dart';
-import 'package:mirk/widgets/chat/message_builder.dart';
-import 'package:mirk/widgets/chat/sended_message.dart';
+
+import 'message_builder.dart';
 
 class UserChat extends StatelessWidget {
   final _messageController = TextEditingController();
