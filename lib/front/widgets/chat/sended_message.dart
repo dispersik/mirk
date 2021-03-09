@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mirk/back/message.dart';
+import 'package:mirk/back/entities/message.dart';
 
 class SendedMessage extends StatelessWidget {
   SendedMessage({@required this.message});

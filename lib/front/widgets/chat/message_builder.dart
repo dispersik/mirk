@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mirk/back/message.dart';
-import 'package:mirk/back/user.dart';
+import 'package:mirk/back/entities/message.dart';
+import 'package:mirk/back/entities/user.dart';
 import 'package:mirk/widgets/chat/arrived_message.dart';
 import 'package:mirk/widgets/chat/sended_message.dart';
 

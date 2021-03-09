@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mirk/widgets/dialogs/user_list_tile.dart';
+import 'package:mirk/front/widgets/dialogs/user_list_tile.dart';
 
 class UserList extends StatelessWidget {
   @override
